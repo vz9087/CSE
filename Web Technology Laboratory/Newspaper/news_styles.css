@@ -1,0 +1,81 @@
+/* Develop HTML page named as “newspaper.html” having variety of HTML 
+semantic elements with background colors, text-colors & size for figure, 
+table, aside, section, article, header, footer… etc. */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+section {
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+article {
+  background-color: #ffffff;
+  border-left: 5px solid #3498db;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+aside {
+  background-color: #f9e79f;
+  padding: 15px;
+  margin: 20px;
+  border: 1px dashed #f1c40f;
+}
+
+figure {
+  background-color: #dff9fb;
+  padding: 10px;
+  margin: 20px auto;
+  text-align: center;
+  width: 60%;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  background-color: #3498db;
+  color: white;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
