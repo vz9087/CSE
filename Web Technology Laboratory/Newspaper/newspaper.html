@@ -1,0 +1,322 @@
+<!-- Develop HTML page named as “newspaper.html” having variety of HTML semantic elements with background colors, 
+text-colors & size for figure, table, aside, section, article, header, footer… etc -->
+ 
+<!DOCTYPE html>
+
+  <html lang = "en">
+  
+  <head>
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+  
+    <title>Home | National Herald</title>
+
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background-color: #f8f9fa;
+        color: #212529;
+      }
+
+      header {
+        background-color: #c0392b;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-family: 'Georgia', serif;
+        font-size: 2.8em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      nav { margin-top: 10px; }
+
+      .nav-bar {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-bar li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-bar li a:hover { background-color: #e74c3c; }
+
+      .layout {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .side-nav {
+        width: 200px;
+        background-color: #f1f1f1;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .side-nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .side-nav li { margin-bottom: 10px; }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .side-nav a:hover { color: #e74c3c; }
+
+      main { flex: 1; }
+
+      .home { background-color: #ff0000; }
+    
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .news-grid article {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      .news-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+
+      article h2 {
+        font-size: 1.2em;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      figure {
+        background-color: #ecf0f1;
+        padding: 10px;
+        margin: 20px 0;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      figcaption { font-size: 0.9em; color: #7f8c8d; }
+
+      table {
+        width: 100%; border-collapse: collapse;
+        margin-top: 20px; background-color: #ffffff; }
+
+      caption { font-weight: bold; margin-bottom: 10px; }
+
+      th, td {
+        border: 1px solid #bdc3c7;
+        padding: 10px; text-align: left; }
+
+      thead { background-color: #3498db; color: white; }
+
+      #contact {
+        margin-top: 30px;
+        background-color: #fefefe;
+        padding: 20px; border-radius: 8px;
+      }
+
+      footer {
+        background-color: #2c3e50; color: white;
+        text-align: center; padding: 15px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+
+        <h1>National Herald</h1>
+        <p>Live updates, breaking news, and expert analysis</p>
+
+        <nav aria-label="Main Navigation">
+            <ul class="nav-bar">
+                <li><a href="#home" title="Go to Home">Home</a></li>
+                <li><a href="#national" title="National Section">National</a></li>
+                <li><a href="#world" title="World News Section">World</a></li>
+                <li><a href="#business" title="Business Section">Business</a></li>
+                <li><a href="#sports" title="Sports Section">Sports</a></li>
+                <li><a href="#contact" title="Contact Us">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="layout">
+
+    <aside class="side-nav" aria-label="Section Navigation">
+      <h2>Latest</h2>
+
+      <ul>
+        <h3>The EU pressures Germany to militarize quickly as possible</h3>
+        <h3>Russia announces total-war on Ukraine!</h3>
+        <h3>Dark Times for a Proud Nation...</h3>
+        <h3>Hirohito thinks Chinese will surrender., but they won't, and never will</h3>
+        <h3>Soviet uprising in Stalingrad is over</h3>
+        <h3>Adolf Hitler announces "Thousand-Week Reich"!</h3>
+        <h3>Himmler is handed the Burgundian State, many fear of his dark and violent killings and murders of non-Aryans</h3>
+        <h3>John F. Kennedy assasinated! Horrible</h3>
+        <h3>If your'e reading this, your'e G@y</h3>
+        <h3>Komi electons are coming to an end. Will Taboritsky reign the throne?</h3>
+        <h3>Ananta Samakhon Hall bombed!!</h3>
+        <h3>Speer enacts reforms for military and economic sectors to start rebuilding the Reich</h3>
+        <h3>Is FBI hiding something from its own people? Something's fishy hmm...</h3>
+        <h3>Bose declares war on the RoI</h3>
+        <h3>Rebellion in Yunnan emerges</h3>
+        <h3>Niggers captured in Walmart after robbing watermelon from the grocery section. A white civilian said: "Well well well"</h3>
+        <h3>There's nothing more to display\^-^\</h3>
+        <h3>Jesus rises from the Heaven and kills the sinners! They didn't repent heh??</h3>
+        <h3>Diddy buys bab-oil and tissues for kids. Wowwww</h3>
+        <h3>Africa has been colonized. Wonderful!!</h3>
+        <h3>Just die already. Good bye;></h3>
+      </ul>
+
+    </aside>
+
+    <main>
+
+      <section id="home" class="home">
+        <marquee scrollamount="20" behavior="scroll" loop="infinite" direction="right">
+          <h2><b>!!!!BREAKING NEWS!!!!</b></h2>
+        </marquee>
+      </section>
+
+      <section id="national" class="news-grid">
+        <article>
+          <h2>PM Modi Launches Demography Mission</h2>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.rNYSxwmvx_ktrYl-LsszhgHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=09efbb14bbcc6410ad1fc512a155373fc9a7c4367ac3144529b1ce10faadb110&ipo=images" alt="PM Modi speaking at launch event" loading="lazy">
+          <p>PM Modi unveiled a new initiative focused on demographic resilience and national safety.</p>
+        </article>
+
+        <article>
+          <h2>India Rebukes Indus Treaty Threats</h2>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.bFULbJXNljxVx8VgY1heAQAAAA%3Fr%3D0%26pid%3DApi&f=1&ipt=5fdf88a500c248a24d31eaec0cfc9b450052b7b31e9544b1ca3f80b8e17c05f4&ipo=images" alt="Indus River dispute image" loading="lazy">
+          <p>India strongly rebuffed Pakistan’s threats over the Indus Waters Treaty, asserting its sovereign rights.</p>
+        </article>
+      </section>
+
+      <section id="world" class="news-grid">
+        <article>
+          <h2>Global Leaders Meet for Climate Summit</h2>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.pPCxFCuBhO8Qo2izm3rVUAHaE7%3Fpid%3DApi&f=1&ipt=5d87c3726632ff0e845e38ec5ac9acf89a89b494104920453f7524738461e651&ipo=images" alt="World leaders at climate summit" loading="lazy">
+          <p>World leaders gathered to discuss urgent climate action and sustainable development goals.</p>
+        </article>
+
+        <article>
+            <h2>I can't breath</h2>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.EcJ_ptga_IVDZGm2vPKOJwHaEK%3Fpid%3DApi&f=1&ipt=0c0a033a8f1e7dc82c3204e29fe6665b2c2f15fed2b792105926db1d0ac88e78&ipo=images" alt="George Floyd" loading="lazy">
+            <p>George Floyd gets arrested after he showed a fake id.</p>
+        </article>
+      </section>
+
+      <section id="business" class="news-grid">
+        <article>
+          <h2>India’s GDP Growth Surges</h2>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.1C9jtvp_5YPe7nCGqgbpWwHaEL%3Fr%3D0%26pid%3DApi&f=1&ipt=c86f1fcb49f53e22de94133043236fabb53c65ca5d1bd99ea23cc82d9fbd2376&ipo=images" alt="Stock market graph" loading="lazy">
+          <p>India’s economy shows strong recovery post-pandemic, driven by manufacturing and digital services.</p>
+        </article>
+
+        <article>
+            <h2>Energy Crisis in EU</h2>
+            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202509/68cac667749dd-eu-sanctions-and-us-tariffs-not-tied-to-oil--but-indias-market--says-alhajji-173201787-16x9.jpg?size=446:251" alt="India-USA Tariff" loading="lazy">
+            <p>Top energy expert: 'EU sanctions, US tariffs are not about oil. They want market access'</p>
+        </article>
+      </section>
+
+      <section id="sports" class="news-grid">
+        <article>
+          <h2>India Wins Asia Cup</h2>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.vBiUtwqdpb5AYMZjb6nrygHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=8c20093479cda2d2cd7011e31735528f3e2ea671a619fa4ea0eb8cec291253ac&ipo=images" alt="Team India celebrating win" loading="lazy">
+          <p>Team India defeated Sri Lanka in a thrilling final to lift the Asia Cup trophy.</p>
+        </article>
+
+        <article>
+            <h2>India-Pakistan Match Cancelled</h2>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs.rfi.fr%2Fmedia%2Fdisplay%2F5123c55e-93dc-11f0-bad7-005056a97e36%2Fw%3A1280%2Fp%3A16x9%2Fd4086b9dbd03a04dde5c836e533f990989123fb8.jpg&f=1&ipt=6ebe3103d4c1929a41337def2e938aa93e173738858c1df8ab6a88bc88908723" alt="No Cricket" loading="lazy">
+            <p>Pakistan Asia Cup match belatedly goes ahead amid India handshake row</p>
+        </article>
+      </section>
+
+      <figure>
+        <img src="https://via.placeholder.com/600x300?text=Digital+Newspaper" alt="Modern newspaper layout" loading="lazy">
+        <figcaption>Digital newspapers blend structure with style</figcaption>
+      </figure>
+
+      <table>
+
+        <caption>Trending Topics</caption>
+        <thead>
+          <tr>
+            <th scope="col">Headline</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operation Sindoor</td>
+            <td>Defence</td>
+          </tr>
+          <tr>
+            <td>Putin–Trump Alaska Summit</td>
+            <td>Global Politics</td>
+          </tr>
+          <tr>
+            <td>Atmanirbhar Bharat Push</td>
+            <td>Economy</td>
+          </tr>
+          <tr>
+            <td>Cloudburst in Kishtwar</td>
+            <td>Environment</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+      <section id="contact">
+
+        <h2>Contact Us</h2>
+        <address>
+          <p>Email: <a href="mailto:vishalvpurshan360@gmail.com">vishalvpurshan360@gmail.com</a></p>
+          <p>Phone: <a href="tel:+91">+91-[redacted]</a></p>
+        </address>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 The Republic Times. A clone website built by Vishal V P.</p>
+  </footer>
+
+  </body>
+
+</html>
