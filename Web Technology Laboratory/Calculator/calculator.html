@@ -1,0 +1,237 @@
+<!-- Apply HTML, CSS and JavaScript to design a simple calculator to perform the 
+following operations: sum,product, difference, remainder, quotient, power, square- 
+root and square. -->
+
+<!doctype html>
+
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1" />
+
+        <title>Simple Calculator</title>
+
+        <style>
+            :root {
+                --bg: #080808;
+                --accent-orange: #c45b2d;
+                --digit: #bfbfbf;
+                --display-size: 64px;
+                --button-size: 76px;
+                --ripple: rgba(255, 255, 255, 0.15);
+            }
+
+            html, body {
+                height: 100%;
+                margin: 0;
+                background: var(--bg);
+                font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                color: var(--digit);
+            }
+
+            .calc-wrap { max-width: 420px; margin: 24px auto; padding: 28px; }
+
+            .panel {
+                background: #383838;
+                border-radius: 18px;
+                padding: 24px;
+                min-height: 720px;
+                display: flex;
+                flex-direction: column; gap: 18px;
+            }
+
+            .display {
+                text-align: right;
+                padding: 12px 6px 0 6px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .output {
+                font-size: var(--display-size);
+                color: var(--digit);
+                margin-top: 12px;
+                overflow: hidden; text-overflow: ellipsis;
+            }
+
+            .sub { font-size: 14px; color: rgba(191, 191, 191, 0.45); }
+
+            .keypad {
+                margin-top: 12px; display: grid; gap: 18px;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            button.key {
+                position: relative; background: transparent; border: none;
+                height: var(--button-size);
+                border-radius: 50%;
+                font-size: 28px; font-weight: 600;
+                color: var(--digit);
+                cursor: pointer; overflow: hidden;
+                transition: background 0.25s ease, transform 0.06s ease;
+            }
+
+            /* Circular hover transition */
+            button.key::after {
+                content: ""; position: absolute;
+                top: 50%; left: 50%;
+                width: 0; height: 0;
+                background: var(--ripple);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, height 0.3s ease;
+                pointer-events: none;
+            }
+
+            button.key:hover::after { width: 200%; height: 200%; }
+
+            button.key:active { transform: scale(0.95); }
+
+            /* accents must appear AFTER */
+             button.key.accent-bg { color: var(--accent-orange) !important; }
+
+            /* Specific color rules */
+            .accent-bg { color: var(--accent-orange); } /* AC & backspace */
+            .equals {
+                background: var(--accent-orange) !important;
+                color: #fff !important;
+                font-size: 34px;
+                border-radius: 50%;
+                width: 84px; height: 84px;
+                justify-self: end;
+                box-shadow: 0 0 18px rgba(196, 91, 45, 0.5);
+                transition: background 0.25s ease, transform 0.06s ease;
+                position: relative; overflow: hidden;
+                z-index: 2;
+            }
+
+            /* Stop the inherited ripple from .key */
+            .key.equals::after {
+                background: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                content: none !important;
+            }
+
+            /* Create a fresh, white ripple that works only on "=" */
+            .equals::before {
+                content: ""; position: absolute;
+                top: 50%; left: 50%;
+                width: 0; height: 0;
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, height 0.3s ease;
+                pointer-events: none; z-index: 3;
+            }
+
+            .equals:hover::before { width: 220%; height: 220%;}
+
+            .equals:active { transform: scale(0.95); }
+
+        </style>
+    </head>
+
+    <body>
+
+    <main class="calc-wrap">
+
+        <section class="panel">
+
+            <div class="display">
+                <div id="sub" class="sub">&nbsp;</div>
+                <div id="output" class="output">0</div>
+            </div>
+
+            <div class="keypad">
+                <!-- Top Row -->
+                <button class="key accent-bg" data-action="clear">AC</button>
+                <button class="key accent-bg" data-action="back">⌫</button>
+                <button class="key accent-bg" data-action="percent">%</button>
+                <button class="key accent-bg" data-action="operator" data-value="/">÷</button>
+
+                <!-- 2nd Row -->
+                <button class="key" data-action="digit" data-value="7">7</button>
+                <button class="key" data-action="digit" data-value="8">8</button>
+                <button class="key" data-action="digit" data-value="9">9</button>
+                <button class="key accent-bg" data-action="operator" data-value="*">x</button>
+
+                <!-- 3rd Row -->
+                <button class="key" data-action="digit" data-value="4">4</button>
+                <button class="key" data-action="digit" data-value="5">5</button>
+                <button class="key" data-action="digit" data-value="6">6</button>
+                <button class="key accent-bg" data-action="operator" data-value="-">−</button>
+
+                <!-- 4th Row -->
+                <button class="key" data-action="digit" data-value="1">1</button>
+                <button class="key" data-action="digit" data-value="2">2</button>
+                <button class="key" data-action="digit" data-value="3">3</button>
+                <button class="key accent-bg" data-action="operator" data-value="+">+</button>
+
+                <!-- Bottom Row: 😁 0 . = -->
+                <button class="key icon-btn" data-action="noop">😁</button>
+                <button class="key" data-action="digit" data-value="0">0</button>
+                <button class="key" data-action="dot">.</button>
+                <button class="key equals" data-action="equals">=</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const outputEl = document.getElementById("output");
+        const subEl = document.getElementById("sub");
+  
+        let expr = "", lastEvaluated = "";
+
+        function render() {
+            outputEl.textContent = expr || "0";
+            subEl.textContent = lastEvaluated ? `Ans: ${lastEvaluated}` : "\u00A0";
+        }
+
+        function safeEval(e) {
+            try {
+                if (/[^0-9+\-*/().% ]/.test(e)) throw new Error("Invalid");
+      
+                const transformed = e.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+                const cleaned = transformed.replace(/[\+\-\*\/\.]+$/, "");
+                const result = Function('"use strict";return (' + cleaned + ")")();
+      
+                if (Number.isFinite(result)) return result;
+                
+                throw new Error("Math error");
+                } catch {
+                return "Error";
+            }
+        }
+
+        function appendDigit(d) { expr += d; render(); }
+        function appendDot() { if (!expr.endsWith(".")) expr += "."; render(); }
+        function applyOperator(op) { if (expr) expr += op; render(); }
+        function clearAll() { expr = ""; lastEvaluated = ""; render(); }
+        function backspace() { expr = expr.slice(0, -1); render(); }
+        function calcPercent() { expr = expr.replace(/(\d+(\.\d+)?)$/, m => '(' + m + '/100)'); render(); }
+
+        function evaluateExpression() {
+            const res = safeEval(expr);
+            
+            if (res === "Error") { outputEl.textContent = "Error"; expr = ""; lastEvaluated = ""; }
+            else { lastEvaluated = res.toString(); outputEl.textContent = lastEvaluated; expr = ""; }
+            subEl.textContent = lastEvaluated ? `Ans: ${lastEvaluated}` : "\u00A0";
+        }
+
+        document.querySelectorAll(".key").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const a = btn.dataset.action, v = btn.dataset.value;
+      
+                if (a === "digit") appendDigit(v);
+                else if (a === "dot") appendDot();
+                else if (a === "operator") applyOperator(v);
+                else if (a === "clear") clearAll();
+                else if (a === "back") backspace();
+                else if (a === "percent") calcPercent();
+                else if (a === "equals") evaluateExpression();
+            });
+        });
+
+        render();
+    </script></body>
+</html>
