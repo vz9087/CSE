@@ -1,0 +1,52 @@
+<!-- Develop an external style sheet named as “style.css” and provide different styles for 
+h2, h3, hr, p, div, span,time, img & a tags. Apply different CSS selectors for tags and 
+demonstrate the significance of each. -->
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Styled Page</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+
+    <body>
+        <main id = "main-content">
+
+        <h2>Welcome to Our Styled Page</h2>
+        <p>This is a paragraph right after an h2. It demonstrates the adjacent sibling selector.</p>
+
+        <h3>Hover over me!</h3>
+        <hr>
+
+        <p lang = "en">This paragraph has a lang attribute, demonstrating the attribute selector.</p>
+        <p>Here's a <span class = "highlight">highlighted</span> word using the class selector.</p>
+
+        <section>
+            <p>This paragraph is inside a section, showing the descendant selector.</p>
+      
+            <span>This span is a direct child of the section.</span>
+        </section>
+
+        <p>The current date and time: <time datetime = "2025-08-10">August 10, 2025</time></p>
+        <p>Notice how the first letter of each paragraph is styled differently.</p>
+
+        <article class = "special">
+            <p>This paragraph is inside an article with class = "special".</p>
+        </article>
+
+        <div class = "special">
+            <p>This paragraph is inside a div with class "special".</p>
+            <span>This span is a direct child of the div.</span>
+        </div>
+
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Deutsche_Arbeitsfront_Symbol.svg/200px-Deutsche_Arbeitsfront_Symbol.svg.png"
+        alt = "A placeholder image">
+
+        <p>Check out this <a href = "https://the-new-order-last-days-of-europe.fandom.com/wiki/The_New_Order:_Last_Days_of_Europe_Wiki" target = "_blank">link</a> to see different link states.</p>
+
+        </main>
+        
+    </body>
+</html>
