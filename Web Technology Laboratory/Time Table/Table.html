@@ -1,0 +1,167 @@
+<!--Develop the HTML page named as “Table.html” to display your class time table. 
+ 
+a) Provide the title as Time Table with table header and table footer, row-span and col-span etc. 
+b) Provide various colour options to the cells (Highlight the lab hours and elective hours with different colours.) 
+c) Provide colour options for rows.-->
+
+<!DOCTYPE html>
+
+<html lang = "en"> 
+    <head> 
+        <title>Time Table</title> 
+        <style> 
+            body { 
+                font-family: Arial, sans-serif; 
+            } 
+ 
+            h1 { 
+                text-align: center; 
+                color: #333; 
+            } 
+ 
+            table { 
+                width: 80%; 
+                margin: 0 auto; 
+                border-collapse: collapse; 
+                border: 2px solid #333; 
+            } 
+ 
+            th, td {  padding: 10px; 
+                text-align: center; 
+                border: 1px solid #333; 
+            } 
+ 
+            th { 
+                background-color: #4CAF50; 
+                color: white; 
+            } 
+ 
+            tfoot { 
+                background-color: #f1f1f1; 
+                font-weight: bold; 
+            } 
+ 
+            tr:nth-child(even) { 
+                background-color: #f2f2f2; 
+            } 
+ 
+            .lab { 
+                background-color: #ffcccb; /* Highlight lab hours in red */ 
+            } 
+ 
+            .project { 
+                background-color: #add8e6; /* Highlight mini project hours in light blue */ 
+            } 
+
+            .break {
+                background-color: darkblue;
+            }
+            
+            .elective {
+                background-color: #dd7a0f; /* Highlight elective hours in light blue */
+            }
+
+            .activity {
+                background-color: #eef601; /* Highlight placement accticity hours in light blue */
+            }
+
+            .exemplar {
+                background-color: #e03838; /* Highlight other hours in light blue */
+            }
+ 
+            .rowspan { 
+                background-color: #dcdcdc; /* Grey color for rows with rowspan */ 
+            } 
+            l
+            { 
+            background-color:blue; 
+            } 
+        </style> 
+    </head> 
+
+    <body>
+        <h1><b>DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING<br>Time-Table for 5th Semester CSE 'C' Section 2025-26</b></h1>
+ 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>Day</th> 
+                    <th>9:00 AM - 10:00 AM</th> 
+                    <th>10:00 AM - 11:00 AM</th> 
+                    <th>11:00 AM - 11:15 AM</th> 
+                    <th>11:15 AM - 12:15 PM</th> 
+                    <th>12:15 PM - 1:15 PM</th> 
+                    <th>1:15 PM - 2:00 PM</th> 
+                    <th>2:00 PM - 3:00 PM</th> 
+                    <th>3:00 PM - 4:00 PM</th> 
+                    <th>4:00 PM - 5:00 PM</th> 
+                </tr> 
+            </thead> 
+
+            <tfoot> 
+                <tr> 
+                    <td colspan = "10">End of Timetable</td> 
+                </tr> 
+            </tfoot> 
+
+            <tbody> 
+                <tr> 
+                    <td><b>Monday</b></td> 
+                    <td>SEPM</td> 
+                    <td>TOC</td> 
+                    <td rowspan = "6"><b><i>BREAK</i></b></td>
+                    <td>CN</td> 
+                    <td class = "exemplar" colspan = "1">Counselling</td> 
+                    <td rowspan = "6" colspan = "1" class = "l"><b><i>LUNCH BREAK</i></b></td> 
+                    <td class = "activity" colspan = "3">Placement Activity</td> 
+                </tr> 
+
+                <tr> 
+                    <td><b>Tuesday</b></td> 
+                    <td>CN</td>
+                    <td>RM & IPR</td>
+                    <td>TOC</td>
+                    <td>UNIX</td>
+                    <td class = "elective" colspan = "2">NSS/PE</td>
+                    <td>RE</td> 
+                </tr> 
+
+                <tr> 
+                    <td><b>Wednesday</b></td> 
+                    <td>UNIX</td> 
+                    <td>SEPM</td> 
+                    <td>RM & IPR</td> 
+                    <td>CN</td> 
+                    <td class = "lab" colspan = "2">Web Tech Lab</td>
+                    <td>RE</td>
+                </tr> 
+
+                <tr> 
+                    <td><b>Thursday</b></td> 
+                    <td>EVS</td> 
+                    <td>SEPM</td> 
+                    <td>TOC</td> 
+                    <td>UNIX</td>
+                    <td>CN</td>
+                    <td class = "project" colspan = "2">Mini Project</td>
+                </tr> 
+
+                <tr> 
+                    <td><b>Friday</b></td> 
+                    <td>TOC</td> 
+                    <td>UNIX</td> 
+                    <td class = "project" colspan = "2">Mini Project</td>
+                    <td class = "activity" colspan = "3">Forum Activity</td> 
+                </tr>
+
+                <tr> 
+                    <td><b>Saturday</b></td> 
+                    <td>RM & IPR</td> 
+                    <td>SEPM</td>
+                    <td class = "lab" colspan = "2">Network Lab</td>
+                </tr> 
+
+            </tbody> 
+        </table> 
+    </body> 
+</html>
