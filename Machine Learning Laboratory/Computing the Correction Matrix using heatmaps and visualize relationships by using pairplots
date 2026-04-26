@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+
+# Step 1: Load the California Housing dataset
+california_data = fetch_california_housing (as_frame = True)
+data = california_data.frame
+
+#Step 2: Try data correlation matrix
+correlation_matrix = data.corr ()
+
+# Step 3: Plot and save the heatmap
+plt.figure (figsize = (10, 8))
+sns.heatmap (correlation_matrix, annot = True, cmap = 'coolwarm',
+linewidth = 0.5)
+
+# Save the heatmap
+plt.savefig('california_heatmap.png', dpi=300, bbox_inches='tight')
+print("Heatmaps saved as 'california_heatmap.png'")
+
+# Show the heatmap
+plt.title ('Correlation Matrix of California Housing Features')
+plt.show ()
+
+# Step 4: Plot and save the pairplot
+sns.pairplot (data, diag_kind = 'kde', plot_kws = {'alpha' : 0.5})
+
+# Save the pairplot
+plt.savefig('california_pairplot.png', dpi=300, bbox_inches='tight')
+print("Pairplots saved as 'california_pairplot.png'")
+
+# Show the pairplot
+plt.suptitle ('Pair Plot of California  Housing Features', y = 1.02)
+plt.show ()
